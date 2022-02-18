@@ -1,0 +1,14 @@
+{
+  "eslint.validate": ["javascript", "html"],
+  "eslint.alwaysShowStatus": true,
+  "editor.tabSize": 2,
+  "git.ignoreLimitWarning": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  /*******prettier 정의*******/
+  "prettier.printWidth": 100,
+  "prettier.tabWidth": 2,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "all"
+}
