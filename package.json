@@ -1,6 +1,6 @@
 {
   "name": "vivi-brandnew",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
@@ -26,5 +26,20 @@
     "eslint": "^8.9.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.4"
-  }
+  },
+  "description": "",
+  "main": "app.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vvivianvv/vivi-brandnew-be.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vvivianvv/vivi-brandnew-be/issues"
+  },
+  "homepage": "https://github.com/vvivianvv/vivi-brandnew-be#readme"
 }

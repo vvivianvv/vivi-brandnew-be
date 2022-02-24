@@ -5,10 +5,10 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const corsConfig = require('./config/corsConfig.json');
+const models = require('./models/index');
 const logger = require('./lib/logger');
 
 const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
 
 const app = express();
 logger.info('app start');
@@ -16,6 +16,18 @@ logger.info('app start');
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+// DB연결 확인 및 table 생성
+models.sequelize.authenticate().then(() => {
+  // sequelize sync(table생성)
+  models.sequelize.sync().then(() => {
+    logger.info('Sequelize sync success');
+  }).catch((err) => {
+    logger.error('Sequelize sync error', err);
+  });
+}).catch((err) => {
+  logger.error('DB Connection fail', err);
+});
 
 app.use(cors(corsConfig));
 app.use(express.json());
@@ -26,7 +38,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
