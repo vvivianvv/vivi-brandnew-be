@@ -41,18 +41,18 @@ body: {
 >response
 ```
 {
-	"role": "user",
-	"active": false,
-	"id": 1,
-	"name": "김개발",
-	"nickname": "개발개발",
-	"userid": "kim123",
-	"email": "kim123@email.com",
-	"phone": "010-1234-1234",
-	"updatedAt": "2022-02-24T10:21:59.417Z",
-	"createdAt": "2022-02-24T10:21:59.417Z",
-	"loginFailCount": null,
-	"deletedAt": null
+  "auth": "user",
+  "loginFailCount": 0,
+  "active": false,
+  "id": 1,
+  "name": "김개발",
+  "nickname": "개발개발",
+  "userid": "kim123",
+  "email": "kim123@email.com",
+  "phone": "010-1234-1234",
+  "updatedAt": "2022-02-28T06:09:57.506Z",
+  "createdAt": "2022-02-28T06:09:57.506Z",
+  "deletedAt": null
 }
 ```
 > 리스트 조회
@@ -68,18 +68,18 @@ query: name, nickname, userid
 	"count": 1,
 	"rows": [
 		{
-			"id": 1,
-			"name": "김개발",
-			"nickname": "개발개발",
-			"userid": "kim123",
-			"role": "user",
-			"email": "kim123@email.com",
-			"phone": "010-1234-1234",
-			"loginFailCount": null,
-			"active": false,
-			"createdAt": "2022-02-24T10:21:59.417Z",
-			"updatedAt": "2022-02-24T10:21:59.417Z",
-			"deletedAt": null
+      "id": 1,
+      "name": "김개발",
+      "nickname": "개발개발",
+      "userid": "kim123",
+      "auth": "user",
+      "email": "kim123@email.com",
+      "phone": "010-1234-1234",
+      "loginFailCount": 0,
+      "active": false,
+      "createdAt": "2022-02-28T06:09:57.506Z",
+      "updatedAt": "2022-02-28T06:09:57.506Z",
+      "deletedAt": null
 		}
 	]
 }
@@ -93,18 +93,18 @@ url: /users/<:id>
 > response
 ```
 {
-	"id": 1,
-	"name": "김개발",
-	"nickname": "개발개발",
-	"userid": "kim123",
-	"role": "user",
-	"email": "kim123@email.com",
-	"phone": "010-1234-1234",
-	"loginFailCount": null,
-	"active": false,
-	"createdAt": "2022-02-24T10:21:59.417Z",
-	"updatedAt": "2022-02-24T10:21:59.417Z",
-	"deletedAt": null
+  "id": 1,
+  "name": "김개발",
+  "nickname": "개발개발",
+  "userid": "kim123",
+  "auth": "user",
+  "email": "kim123@email.com",
+  "phone": "010-1234-1234",
+  "loginFailCount": 0,
+  "active": false,
+  "createdAt": "2022-02-28T06:09:57.506Z",
+  "updatedAt": "2022-02-28T06:09:57.506Z",
+  "deletedAt": null
 }
 ```
 > 수정
@@ -114,16 +114,13 @@ method: PUT
 url: /users/<:id> 
 body:
 {
-	"id": 1,
-	"name": "김개발",
-	"nickname": "개발개발",
-	"userid": "kim123",
-	"role": "user",
-	"password": "1234567",
-	"email": "kim123@email.com",
-	"phone": "010-1234-1234",
-	"loginFailCount": null,
-	"active": false
+  "id": 1,
+  "name": "김개발",
+  "nickname": "개발개발",
+  "auth": "user",
+  "email": "kim123@email.com",
+  "phone": "010-1234-1234",
+  "active": false
 }
 ```
 > response
