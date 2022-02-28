@@ -25,6 +25,12 @@ const dao = {
         name: { [Op.like]: `%${params.name}%` },
       };
     }
+    if (params.nickname) {
+      setQuery.where = {
+        ...setQuery.where,
+        name: { [Op.like]: `%${params.nickname}%` },
+      };
+    }
     if (params.userid) {
       setQuery.where = {
         ...setQuery.where,

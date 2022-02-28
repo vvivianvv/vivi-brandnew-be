@@ -9,7 +9,7 @@ module.exports = class User extends Sequelize.Model {
           allowNull: false,
         },
         nickname: {
-          type: Sequelize.STRING(200),
+          type: Sequelize.STRING(20),
           unique: true,
           allowNull: false,
         },
@@ -19,22 +19,25 @@ module.exports = class User extends Sequelize.Model {
           allowNull: false,
         },
         password: {
-          type: Sequelize.STRING(500),
+          type: Sequelize.STRING(20),
           allowNull: false,
         },
-        role: {
+        auth: {
           type: Sequelize.STRING(20),
           allowNull: false,
           defaultValue: 'user',
         },
         email: {
           type: Sequelize.STRING(255),
+          allowNull: false,
         },
         phone: {
           type: Sequelize.STRING(255),
         },
         loginFailCount: {
           type: Sequelize.INTEGER,
+          allowNull: false,
+          defaultValue: 0,
         },
         active: {
           type: Sequelize.BOOLEAN,
@@ -47,6 +50,8 @@ module.exports = class User extends Sequelize.Model {
         underscored: true,
         timestamps: true,
         paranoid: true,
+        charset: 'utf8',
+        collate: 'utf8_general_ci',
       },
     );
   }

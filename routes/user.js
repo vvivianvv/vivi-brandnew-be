@@ -12,6 +12,7 @@ router.post('/', async (req, res) => {
       nickname: req.body.nickname,
       userid: req.body.userid,
       password: req.body.password,
+      auth: req.body.auth,
       email: req.body.email,
       phone: req.body.phone,
     };
@@ -30,9 +31,9 @@ router.post('/', async (req, res) => {
     logger.info(`(user.reg.result) ${JSON.stringify(result)}`);
 
     // 최종 응답
-    res.status(200).json(result);
+    return res.status(200).json(result);
   } catch (err) {
-    res.status(500).json({ err: err.toString() });
+    return res.status(500).json({ err: err.toString() });
   }
 });
 
@@ -50,9 +51,9 @@ router.get('/', async (req, res) => {
     logger.info(`(user.list.result) ${JSON.stringify(result)}`);
 
     // 최종 응답
-    res.status(200).json(result);
+    return res.status(200).json(result);
   } catch (err) {
-    res.status(500).json({ err: err.toString() });
+    return res.status(500).json({ err: err.toString() });
   }
 });
 // 상세정보 조회
@@ -67,24 +68,23 @@ router.get('/:id', async (req, res) => {
     logger.info(`(user.info.result) ${JSON.stringify(result)}`);
 
     // 최종 응답
-    res.status(200).json(result);
+    return res.status(200).json(result);
   } catch (err) {
-    res.status(500).json({ err: err.toString() });
+    return res.status(500).json({ err: err.toString() });
   }
 });
 // 수정
 router.put('/:id', async (req, res) => {
   try {
     const params = {
-      id: req.body.id,
+      id: req.params.id,
       name: req.body.name,
       nickname: req.body.nickname,
-      userid: req.body.userid,
-      role: req.body.role,
-      password: req.body.password,
+      auth: req.body.auth,
+      // password: req.body.password,
       email: req.body.email,
       phone: req.body.phone,
-      loginFailCount: req.body.loginFailCount,
+      // loginFailCount: req.body.loginFailCount,
       active: req.body.active,
     };
     logger.info(`(user.update.params) ${JSON.stringify(params)}`);
@@ -93,9 +93,9 @@ router.put('/:id', async (req, res) => {
     logger.info(`(user.update.result) ${JSON.stringify(result)}`);
 
     // 최종 응답
-    res.status(200).json(result);
+    return res.status(200).json(result);
   } catch (err) {
-    res.status(500).json({ err: err.toString() });
+    return res.status(500).json({ err: err.toString() });
   }
 });
 // 삭제
@@ -110,9 +110,9 @@ router.delete('/:id', async (req, res) => {
     logger.info(`(user.delete.result) ${JSON.stringify(result)}`);
 
     // 최종 응답
-    res.status(200).json(result);
+    return res.status(200).json(result);
   } catch (err) {
-    res.status(500).json({ err: err.toString() });
+    return res.status(500).json({ err: err.toString() });
   }
 });
 

@@ -1,6 +1,5 @@
 const logger = require('../lib/logger');
 const userDao = require('../dao/userDao');
-const { User } = require('../models');
 
 const service = {
   // user 입력
