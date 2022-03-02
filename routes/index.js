@@ -1,6 +1,7 @@
 const express = require('express');
 const logger = require('../lib/logger');
 const userRouter = require('./user');
+const convenienceRouter = require('./convenience');
 
 const router = express.Router();
 
@@ -10,5 +11,6 @@ router.get('/', (req, res, next) => {
 });
 
 router.use('/users', userRouter);
+router.use('/conveniences', convenienceRouter);
 
 module.exports = router;

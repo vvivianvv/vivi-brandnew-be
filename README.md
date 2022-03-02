@@ -141,3 +141,78 @@ url: /users/<:id>
 	"deletedCount": 1
 }
 ```
+
+# 편의점 API
+
+> /routes/convenience.js
+> 
+> 등록  
+>request
+```
+method: POST 
+url: http://localhost:3003/conveniences
+body: 
+{
+  "name": "CU"
+}
+```
+>response
+```
+{
+  "id": 1,
+  "name": "CU",
+  "updatedAt": "2022-03-02T01:32:37.513Z",
+  "createdAt": "2022-03-02T01:32:37.513Z",
+  "deletedAt": null
+}
+```
+> 리스트 조회
+> request
+```
+method: GET
+url: /conveniences
+```
+> response
+```
+{
+	"count": 1,
+	"rows": [
+    {
+      "id": 1,
+      "name": "CU",
+      "createdAt": "2022-03-02T01:32:37.513Z",
+      "updatedAt": "2022-03-02T01:32:37.513Z",
+      "deletedAt": null
+    }
+	]
+}
+```
+
+> 수정
+> request
+```
+method: PUT 
+url: /conveniences/<:id> 
+body:
+{
+"name": "GS"
+}
+```
+> response
+```
+{
+	"updatedCount": 1
+}
+```
+> 삭제
+> request
+```
+method: DELETE 
+url: /conveniences/<:id>
+```
+> response
+```
+{
+	"deletedCount": 1
+}
+```

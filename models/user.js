@@ -42,7 +42,7 @@ module.exports = class User extends Sequelize.Model {
         active: {
           type: Sequelize.BOOLEAN,
           allowNull: false,
-          defaultValue: false,
+          defaultValue: true,
         },
       },
       {
